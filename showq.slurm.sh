@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #this script is used to show running jobs on stallo cluster.
+#Author Jun Zhang
 #Date: 20190625
 #copied from ~/bin/individual_qf (ECUST-CRE)
 #Modified by ZHANG Jun, 20201002
