@@ -28,3 +28,10 @@ cat << EOF
 EOF
 
 squeue -u $LOGNAME | sort -k1n
+
+echo '--------------------------------------------------------------------------------------------'
+let TOTAL_JOB=$(squeue -u $LOGNAME | awk '{print $5}' | wc -l)-1
+let RUN_JOB=$(squeue -u $LOGNAME | awk '{print $5}' | grep -w R | wc -l)
+echo "Total jobs  : $TOTAL_JOB"
+echo Running jobs: $RUN_JOB
+echo '--------------------------------------------------------------------------------------------'
