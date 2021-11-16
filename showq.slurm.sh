@@ -6,6 +6,11 @@
 #copied from ~/bin/individual_qf (ECUST-CRE)
 #Modified by ZHANG Jun, 20201002
 
+if [ ! -z $1 ] && [ "x$1" != 'x-a' ]
+then
+scontrol show job $1 |grep "WorkDir=/"| tr "=" " "|awk '{print $2}'
+exit
+fi
 
 cat << EOF
 --------------------------------------------------------------------------------------------
