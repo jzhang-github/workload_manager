@@ -9,7 +9,7 @@
 echo ============================================================
 busers
 echo ============================================================
-bjobs | awk '{print $1,$3}' | grep -v ^12 > .JOB_ID_tmp
+bjobs | awk '{print $1,$3}' | grep -v ‘*’ > .JOB_ID_tmp
 echo JOB PATH > .JOB_PATH_tmp
 bjobs -l | grep -A3 'Submitted from host' | tr '\n' ' ' | sed s/[[:space:]]//g | sed "s/CWD</\n/g" | awk -F'>,' '{print $1}' | sed '1d' >> .JOB_PATH_tmp
 paste .JOB_ID_tmp .JOB_PATH_tmp
